@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        /**
+         * Redirects the user to the hash-based route for Single Page Application (SPA) support.
+         * Converts the current path, query, and hash into a hash route (e.g., "/about" → "/#/about").
+         * Ensures minimal file size for fast loading on 404 errors.
+         */
+        function redirectToHashRoute() {
+            var path = window.location.pathname + window.location.search + window.location.hash;
+            window.location.replace('/#' + path);
+        }
+        redirectToHashRoute();
+    </script>
+    <style>
+        a,
+        body {
+            background-color: #424549;
+            font-family: Arial;
+            color: white;
+        }
+
+        a {
+            color: cyan;
+            text-decoration: none;
+        }
+
+        noscript {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <p>If you are not being redirected, visit </p>
+        <a href="/">the home page</a>
+    </noscript>
+</body>
+
+</html>
